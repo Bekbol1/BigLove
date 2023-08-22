@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/calculateFragment">
+
+    <fragment
+        android:id="@+id/calculateFragment"
+        android:name="com.example.lovecalculator.ui.CalculateFragment"
+        android:label="fragment_calculate"
+        tools:layout="@layout/fragment_calculate">
+    </fragment>
+    <fragment
+        android:id="@+id/resultFragment"
+        android:name="com.example.lovecalculator.ui.ResultFragment"
+        android:label="fragment_result"
+        tools:layout="@layout/fragment_result">
+    </fragment>
+</navigation>
