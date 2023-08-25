@@ -6,13 +6,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
+import com.example.lovecalculator.ResultPresenter
 import com.example.lovecalculator.model.LoveModel
 import com.example.lovecalculator.databinding.FragmentResultBinding
 import com.example.lovecalculator.ui.CalculateFragment.Companion.MODEL_KEY
+import com.example.lovecalculator.view.ResultView
 
-class ResultFragment : Fragment() {
+class ResultFragment : Fragment(),ResultView {
 
     private lateinit var binding: FragmentResultBinding
+    private val presenter = ResultPresenter(this)
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -29,12 +32,9 @@ class ResultFragment : Fragment() {
     }
 
     private fun getResult() {
-        with(binding){
-            val result = arguments?.getSerializable(MODEL_KEY) as LoveModel
-            tvFirstname.text = result.firstName
-            tvSecondname.text = result.secondName
-            tvPercent.text = result.percentage
-        }
+        val result = arguments?.getSerializable(MODEL_KEY) as LoveModel
+        presenter.getData(result)
+
 
     }
 
@@ -44,6 +44,20 @@ class ResultFragment : Fragment() {
 
                 findNavController().navigateUp()
             }
+        }
+    }
+
+    override fun showLove(
+        firstName: String,
+        secondName: String,
+        percentage: String,
+        wishes: String
+    ) {
+        with(binding){
+            tvFirstname.text = firstName
+            tvSecondname.text = secondName
+            tvPercent.text = percentage
+            tvWishes.text = wishes
         }
     }
 

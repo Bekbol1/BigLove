@@ -88,6 +88,18 @@
             app:layout_constraintStart_toStartOf="@id/img_heart2"
             app:layout_constraintTop_toTopOf="@id/img_heart2" />
 
+        <TextView
+            android:id="@+id/tv_wishes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/img_heart2"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:textColor="@color/black"
+            tools:text="Okekekekeke"
+            android:gravity="center"
+            android:textSize="24sp"/>
+
         <Button
             android:id="@+id/btn_try_again"
             android:layout_width="wrap_content"
@@ -96,9 +108,9 @@
             android:backgroundTint="@color/blue"
             android:text="@string/try_again"
             android:textSize="24sp"
-            app:layout_constraintEnd_toEndOf="@id/img_heart2"
-            app:layout_constraintStart_toStartOf="@id/img_heart2"
-            app:layout_constraintTop_toBottomOf="@id/img_heart2" />
+            app:layout_constraintEnd_toEndOf="@id/tv_wishes"
+            app:layout_constraintStart_toStartOf="@id/tv_wishes"
+            app:layout_constraintTop_toBottomOf="@id/tv_wishes" />
 
         <LinearLayout
             android:id="@+id/container_home"
