@@ -6,9 +6,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
-import com.example.lovecalculator.LoveModel
-import com.example.lovecalculator.R
+import com.example.lovecalculator.model.LoveModel
 import com.example.lovecalculator.databinding.FragmentResultBinding
+import com.example.lovecalculator.ui.CalculateFragment.Companion.MODEL_KEY
 
 class ResultFragment : Fragment() {
 
@@ -30,7 +30,7 @@ class ResultFragment : Fragment() {
 
     private fun getResult() {
         with(binding){
-            val result = arguments?.getSerializable("result") as LoveModel
+            val result = arguments?.getSerializable(MODEL_KEY) as LoveModel
             tvFirstname.text = result.firstName
             tvSecondname.text = result.secondName
             tvPercent.text = result.percentage
@@ -41,6 +41,7 @@ class ResultFragment : Fragment() {
     private fun initListeners() {
         with(binding){
             btnTryAgain.setOnClickListener {
+
                 findNavController().navigateUp()
             }
         }

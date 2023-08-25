@@ -77,7 +77,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
                 android:background="@null"
-                android:imeOptions="actionDone"
+                android:imeOptions="actionNext"
                 android:inputType="text"
                 android:textSize="18sp" />
 

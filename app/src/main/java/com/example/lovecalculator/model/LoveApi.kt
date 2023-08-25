@@ -1,6 +1,6 @@
-package com.example.lovecalculator
+package com.example.lovecalculator.model
 
-import com.example.lovecalculator.LoveModel
+import com.example.lovecalculator.model.LoveModel
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Header
