@@ -1,4 +1,4 @@
-package com.example.lovecalculator.ui
+package com.example.lovecalculator.ui.result
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -6,10 +6,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
+import com.example.lovecalculator.R
 import com.example.lovecalculator.ResultPresenter
 import com.example.lovecalculator.model.LoveModel
 import com.example.lovecalculator.databinding.FragmentResultBinding
-import com.example.lovecalculator.ui.CalculateFragment.Companion.MODEL_KEY
+import com.example.lovecalculator.ui.calculate.CalculateFragment.Companion.MODEL_KEY
 import com.example.lovecalculator.view.ResultView
 
 class ResultFragment : Fragment(),ResultView {
@@ -41,8 +42,10 @@ class ResultFragment : Fragment(),ResultView {
     private fun initListeners() {
         with(binding){
             btnTryAgain.setOnClickListener {
-
                 findNavController().navigateUp()
+            }
+            btnHistory.setOnClickListener {
+                findNavController().navigate(R.id.historyFragment)
             }
         }
     }
