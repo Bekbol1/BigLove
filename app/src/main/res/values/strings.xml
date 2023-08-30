@@ -10,4 +10,10 @@
     <string name="history">History</string>
     <string name="_100_percent">100%</string>
     <string name="try_again">Try Again</string>
+    <string name="time_of_creation">Время создания записи</string>
+    <string name="ok">OK</string>
+    <string name="are_you_sure_to_delete_this">Вы уверены что хотите удалить эту запись?</string>
+    <string name="and">" and "</string>
+    <string name="yes">Да</string>
+    <string name="no">Нет</string>
 </resources>

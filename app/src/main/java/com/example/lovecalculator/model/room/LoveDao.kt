@@ -12,7 +12,6 @@ interface LoveDao {
     @Query("SELECT * FROM love_table ORDER BY id DESC")
     fun getAll():List<LoveModel>
 
-
     @Insert
     fun insert(loveModel: LoveModel)
 

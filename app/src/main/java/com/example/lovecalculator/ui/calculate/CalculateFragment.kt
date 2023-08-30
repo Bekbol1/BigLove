@@ -45,8 +45,8 @@ class CalculateFragment : Fragment(),LoveView {
     }
 
     override fun navigateToResultFragment(loveModel: LoveModel) {
-        App.appDatabase.loveDao().insert(loveModel)
         findNavController().navigate(R.id.resultFragment, bundleOf(MODEL_KEY to loveModel))
+
         binding.etFirstname.text.clear()
         binding.etSecondname.text.clear()
     }

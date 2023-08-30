@@ -10,7 +10,7 @@ class App : Application() {
         super.onCreate()
         appDatabase = Room.databaseBuilder(applicationContext,
             AppDatabase::class.java,
-            "love-file")
+            "love")
             .allowMainThreadQueries()
             .build()
     }

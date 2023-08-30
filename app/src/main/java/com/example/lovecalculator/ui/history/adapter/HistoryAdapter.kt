@@ -14,7 +14,7 @@ class HistoryAdapter(
 
     private val list = arrayListOf<LoveModel>()
 
-    fun addTasks(loves: List<LoveModel>) {
+    fun addLove(loves: List<LoveModel>) {
         list.clear()
         list.addAll(loves)
         notifyDataSetChanged()
