@@ -1,21 +1,26 @@
 package com.example.lovecalculator
 
 import android.util.Log
-import android.widget.Toast
-import androidx.core.content.ContentProviderCompat.requireContext
-import androidx.core.os.bundleOf
-import androidx.navigation.fragment.NavHostFragment.Companion.findNavController
+import com.example.lovecalculator.model.LoveApi
 import com.example.lovecalculator.model.LoveModel
-import com.example.lovecalculator.model.RetrofitService
+import com.example.lovecalculator.model.Pref
+import com.example.lovecalculator.model.room.LoveDao
 import com.example.lovecalculator.view.LoveView
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import java.util.Date
+import javax.inject.Inject
 
-class Presenter(val loveView: LoveView) {
+class Presenter @Inject constructor(private val api: LoveApi) {
 
-    private var api = RetrofitService.api
+    lateinit var loveView:LoveView
+
+    @Inject
+    lateinit var loveDao: LoveDao
+
+    @Inject
+    lateinit var pref: Pref
 
     fun getLoveResult(firstName: String, secondName: String) {
         api.calculateCompatibility(
@@ -26,7 +31,8 @@ class Presenter(val loveView: LoveView) {
                     model.insertTime = Date().time
                     Log.e("ololo", "onResponse: ${model.insertTime}")
                     loveView.navigateToResultFragment(model)
-                    App.appDatabase.loveDao().insert(model)
+                    loveDao.insert(model)
+                    //App.appDatabase.loveDao().insert(model)
                     //findNavController().navigate(R.id.resultFragment, bundleOf("result" to response.body()))
                 }
             }
@@ -37,5 +43,17 @@ class Presenter(val loveView: LoveView) {
 
         })
     }
+
+    fun attachView(view: LoveView){
+        this.loveView = view
+
+    }
+
+    fun showOnBoard(){
+        if (!pref.isOnBoardingShowed()){
+            loveView.navigateToOnBoardFragment()
+        }
+    }
+
 
 }

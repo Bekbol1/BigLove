@@ -16,4 +16,6 @@
     <string name="and">" and "</string>
     <string name="yes">Да</string>
     <string name="no">Нет</string>
+    <string name="title">Title</string>
+    <string name="description">Description</string>
 </resources>

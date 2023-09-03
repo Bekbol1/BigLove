@@ -7,4 +7,6 @@ interface LoveView {
     fun navigateToResultFragment(loveModel: LoveModel)
     fun showToast(msg:String)
 
+    fun navigateToOnBoardFragment()
+
 }

@@ -12,15 +12,22 @@ import com.example.lovecalculator.HistoryPresenter
 import com.example.lovecalculator.R
 import com.example.lovecalculator.databinding.FragmentHistoryBinding
 import com.example.lovecalculator.model.LoveModel
+import com.example.lovecalculator.model.room.LoveDao
 import com.example.lovecalculator.ui.history.adapter.HistoryAdapter
 import com.example.lovecalculator.view.HistoryView
+import dagger.hilt.android.AndroidEntryPoint
 import java.text.SimpleDateFormat
+import javax.inject.Inject
 
+@AndroidEntryPoint
 class HistoryFragment : Fragment(), HistoryView {
 
     private lateinit var binding: FragmentHistoryBinding
+
     private val adapter = HistoryAdapter(this::onLongClickItem, this::onClickItem)
-    private val historyPresenter = HistoryPresenter(this)
+
+    @Inject
+    lateinit var historyPresenter: HistoryPresenter
 
 
     override fun onCreateView(
@@ -33,9 +40,8 @@ class HistoryFragment : Fragment(), HistoryView {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        historyPresenter.attachView(this)
         historyPresenter.getHistoryList()
-
-
     }
 
     private fun onLongClickItem(loveModel: LoveModel) {
@@ -71,7 +77,7 @@ class HistoryFragment : Fragment(), HistoryView {
             }
             .setNegativeButton(getString(R.string.no)) { _, _ -> }
             .show()
-
     }
+
 
 }

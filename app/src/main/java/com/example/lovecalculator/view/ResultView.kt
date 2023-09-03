@@ -1,6 +1,6 @@
 package com.example.lovecalculator.view
 
-import android.health.connect.datatypes.units.Percentage
+
 
 interface ResultView {
 
