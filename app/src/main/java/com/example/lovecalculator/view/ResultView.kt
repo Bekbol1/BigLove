@@ -6,4 +6,5 @@ interface ResultView {
 
     fun showLove(firstName:String,secondName:String,percentage: String,wishes:String)
 
+
 }

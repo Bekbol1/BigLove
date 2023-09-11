@@ -13,22 +13,22 @@ class OnBoardAdapter(private val onClick:()->Unit):Adapter<OnBoardAdapter.OnBoar
 
     private val list = arrayListOf(
         OnBoardModel(
-            R.drawable.img_onboard1,
+            R.raw.animation_lmezhwfy,
             "Интересная логика",
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
         ),
         OnBoardModel(
-            R.drawable.img_onboard2,
+            R.raw.animation_lmezjyhb,
             "Удобное пользование",
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
         ),
         OnBoardModel(
-            R.drawable.img_onboard3,
+            R.raw.animation_lmezl6rz,
             "Отличный дизайн",
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
         ),
         OnBoardModel(
-            R.drawable.img_onboard4,
+            R.raw.animation_lmezrvak,
             "Spide и Kitty ждут вас",
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
         )
@@ -54,7 +54,10 @@ class OnBoardAdapter(private val onClick:()->Unit):Adapter<OnBoardAdapter.OnBoar
         fun bind(onBoard: OnBoardModel) = with(binding){
             tvTitle.text = onBoard.title
             tvDesc.text = onBoard.description
-            onBoard.image?.let { ivBoard.setImageResource(it) }
+            onBoard.anim?.let {
+                ivBoard.setAnimation(it)
+                ivBoard.playAnimation()
+            }
             btnStart.isVisible = adapterPosition == list.lastIndex
             tvSkip.isVisible = adapterPosition != list.lastIndex
             btnStart.setOnClickListener {

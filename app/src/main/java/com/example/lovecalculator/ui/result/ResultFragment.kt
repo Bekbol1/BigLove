@@ -47,6 +47,9 @@ class ResultFragment : Fragment(),ResultView {
             btnHistory.setOnClickListener {
                 findNavController().navigate(R.id.historyFragment)
             }
+            btnHome.setOnClickListener {
+                findNavController().navigateUp()
+            }
         }
     }
 
@@ -63,6 +66,7 @@ class ResultFragment : Fragment(),ResultView {
             tvWishes.text = wishes
         }
     }
+
 
 
 }
