@@ -13,17 +13,17 @@ class OnBoardAdapter(private val onClick:()->Unit):Adapter<OnBoardAdapter.OnBoar
 
     private val list = arrayListOf(
         OnBoardModel(
-            R.raw.animation_lmezhwfy,
+            R.raw.couplewalk,
             "Интересная логика",
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
         ),
         OnBoardModel(
-            R.raw.animation_lmezjyhb,
+            R.raw.cupidlove,
             "Удобное пользование",
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
         ),
         OnBoardModel(
-            R.raw.animation_lmezl6rz,
+            R.raw.lovemessage,
             "Отличный дизайн",
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
         ),
