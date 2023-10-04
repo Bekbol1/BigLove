@@ -12,5 +12,6 @@ class Pref @Inject constructor(private val sharedPreferences: SharedPreferences)
     fun onBoardingShowed(){
         sharedPreferences.edit().putBoolean("key",true).apply()
     }
+    //
 
 }
