@@ -9,8 +9,7 @@ class ResultPresenter(private val resultView: ResultView) {
         resultView.showLove(
             loveModel.firstName,
             loveModel.secondName,
-            loveModel.percentage,
-            loveModel.result
+            loveModel.percentage
         )
     }
 

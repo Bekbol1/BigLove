@@ -44,10 +44,10 @@ class ResultFragment : Fragment(),ResultView {
             btnTryAgain.setOnClickListener {
                 findNavController().navigateUp()
             }
-            btnHistory.setOnClickListener {
+            imgHistory.setOnClickListener {
                 findNavController().navigate(R.id.historyFragment)
             }
-            btnHome.setOnClickListener {
+            imgHome.setOnClickListener {
                 findNavController().navigateUp()
             }
         }
@@ -57,13 +57,11 @@ class ResultFragment : Fragment(),ResultView {
         firstName: String,
         secondName: String,
         percentage: String,
-        wishes: String
     ) {
         with(binding){
             tvFirstname.text = firstName
             tvSecondname.text = secondName
             tvPercent.text = percentage
-            tvWishes.text = wishes
         }
     }
 

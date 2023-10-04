@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.calculate.CalculateFragment">
+    tools:context=".ui.CalculateFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/container"
@@ -12,33 +12,26 @@
         android:layout_height="match_parent"
         android:layout_marginHorizontal="12dp"
         android:layout_marginVertical="24dp"
-        android:background="@drawable/bg_outer_container">
+        android:background="@color/white">
 
         <ImageView
             android:id="@+id/img_main"
             android:layout_width="match_parent"
             android:layout_height="260dp"
             android:layout_marginTop="2dp"
-            android:src="@drawable/img_spiderman_kitty"
+            android:src="@drawable/img_love"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="2dp"
-            android:layout_marginBottom="48dp"
-            android:background="@color/blue_grey"
-            app:layout_constraintBottom_toBottomOf="@id/img_main"
-            app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
             android:id="@+id/tv_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
             android:gravity="center"
             android:text="@string/app_name"
-            android:textColor="@color/red"
+            android:textColor="@color/blue"
             android:textSize="34sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
@@ -64,7 +57,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="12dp"
-            android:backgroundTint="@color/light_grey"
             app:cardCornerRadius="24dp"
             app:cardElevation="4dp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -77,7 +69,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
                 android:background="@null"
-                android:imeOptions="actionNext"
+                android:imeOptions="actionDone"
                 android:inputType="text"
                 android:textSize="18sp" />
 
@@ -101,7 +93,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="12dp"
-            android:backgroundTint="@color/light_grey"
             app:cardCornerRadius="24dp"
             app:cardElevation="4dp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -133,37 +124,12 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/container_secondname" />
 
-        <LinearLayout
-            android:id="@+id/container_home"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_margin="4dp"
-            android:clickable="true"
-            android:orientation="vertical"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent">
-
-            <ImageView
-                android:id="@+id/img_home"
-                android:layout_width="60dp"
-                android:layout_height="40dp"
-                android:src="@drawable/img_spiderman_heart" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:text="@string/home"
-                android:textColor="@color/black"
-                android:textSize="16sp" />
-
-        </LinearLayout>
 
         <LinearLayout
             android:id="@+id/container_history"
-            android:layout_width="60dp"
+            android:layout_width="72dp"
             android:layout_height="60dp"
-            android:layout_margin="4dp"
+            android:layout_marginEnd="16dp"
             android:clickable="true"
             android:orientation="vertical"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -171,15 +137,15 @@
 
             <ImageView
                 android:id="@+id/img_history"
-                android:layout_width="60dp"
-                android:layout_height="40dp"
-                android:src="@drawable/ic_diagram"
-                app:tint="@color/dark_red" />
+                android:layout_width="56dp"
+                android:layout_height="36dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_diagram" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
+                android:layout_gravity="center"
                 android:text="@string/history"
                 android:textColor="@color/black"
                 android:textSize="16sp" />

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.result.ResultFragment">
+    tools:context=".ui.ResultFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/container"
@@ -12,30 +12,23 @@
         android:layout_height="match_parent"
         android:layout_marginHorizontal="12dp"
         android:layout_marginVertical="24dp"
-        android:background="@drawable/bg_outer_container">
+        android:background="@color/white">
 
         <ImageView
             android:id="@+id/img_result"
-            android:layout_width="378dp"
-            android:layout_height="260dp"
+            android:layout_width="340dp"
+            android:layout_height="240dp"
             android:layout_marginTop="2dp"
-            android:src="@drawable/img_spiderman_kitty_kiss"
+            android:src="@drawable/img_lovesecond"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="2dp"
-            android:layout_marginBottom="24dp"
-            android:background="@color/blue_grey"
-            app:layout_constraintBottom_toBottomOf="@+id/img_result"
-            app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
             android:id="@+id/tv_firstname"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="36dp"
             android:text="@string/first_name"
             android:textColor="@color/black"
             android:textSize="24sp"
@@ -48,7 +41,7 @@
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_margin="12dp"
-            android:src="@drawable/img_heart_pixel"
+            android:src="@drawable/png_plus"
             app:layout_constraintEnd_toEndOf="@id/tv_firstname"
             app:layout_constraintStart_toStartOf="@id/tv_firstname"
             app:layout_constraintTop_toBottomOf="@id/tv_firstname" />
@@ -70,7 +63,7 @@
             android:layout_width="120dp"
             android:layout_height="120dp"
             android:layout_marginTop="12dp"
-            android:src="@drawable/img_heart2"
+            android:src="@drawable/img_heart"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_secondname" />
@@ -80,25 +73,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/_100_percent"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="24sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@id/img_heart2"
             app:layout_constraintEnd_toEndOf="@id/img_heart2"
             app:layout_constraintStart_toStartOf="@id/img_heart2"
             app:layout_constraintTop_toTopOf="@id/img_heart2" />
-
-        <TextView
-            android:id="@+id/tv_wishes"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/img_heart2"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:textColor="@color/black"
-            tools:text="Okekekekeke"
-            android:gravity="center"
-            android:textSize="24sp"/>
 
         <Button
             android:id="@+id/btn_try_again"
@@ -108,15 +89,16 @@
             android:backgroundTint="@color/blue"
             android:text="@string/try_again"
             android:textSize="24sp"
-            app:layout_constraintEnd_toEndOf="@id/tv_wishes"
-            app:layout_constraintStart_toStartOf="@id/tv_wishes"
-            app:layout_constraintTop_toBottomOf="@id/tv_wishes" />
+            app:layout_constraintEnd_toEndOf="@id/img_heart2"
+            app:layout_constraintStart_toStartOf="@id/img_heart2"
+            app:layout_constraintTop_toBottomOf="@id/img_heart2" />
 
         <LinearLayout
-            android:id="@+id/btn_home"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_margin="4dp"
+            android:id="@+id/container_home"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginBottom="4dp"
             android:clickable="true"
             android:orientation="vertical"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -124,14 +106,15 @@
 
             <ImageView
                 android:id="@+id/img_home"
-                android:layout_width="60dp"
-                android:layout_height="40dp"
-                android:src="@drawable/img_spiderman_heart" />
+                android:layout_width="56dp"
+                android:layout_height="36dp"
+                android:layout_gravity="center"
+                android:src="@drawable/img_home" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
+                android:layout_gravity="center"
                 android:text="@string/home"
                 android:textColor="@color/black"
                 android:textSize="16sp" />
@@ -139,10 +122,11 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/btn_history"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_margin="4dp"
+            android:id="@+id/container_history"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="4dp"
             android:clickable="true"
             android:orientation="vertical"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -150,15 +134,15 @@
 
             <ImageView
                 android:id="@+id/img_history"
-                android:layout_width="60dp"
-                android:layout_height="40dp"
-                android:src="@drawable/ic_diagram"
-                app:tint="@color/dark_red" />
+                android:layout_width="56dp"
+                android:layout_height="36dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_diagram" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
+                android:layout_gravity="center"
                 android:text="@string/history"
                 android:textColor="@color/black"
                 android:textSize="16sp" />
