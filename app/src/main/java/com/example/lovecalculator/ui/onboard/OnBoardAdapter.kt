@@ -26,11 +26,6 @@ class OnBoardAdapter(private val onClick:()->Unit):Adapter<OnBoardAdapter.OnBoar
             R.raw.lovemessage,
             "Отличный дизайн",
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-        ),
-        OnBoardModel(
-            R.raw.animation_lmezrvak,
-            "Spide и Kitty ждут вас",
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
         )
     )
 

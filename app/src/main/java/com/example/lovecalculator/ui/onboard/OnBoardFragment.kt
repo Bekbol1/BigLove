@@ -40,5 +40,5 @@ class OnBoardFragment : Fragment() {
         pref.onBoardingShowed()
         findNavController().navigate(R.id.calculateFragment)
     }
-
+//
 }

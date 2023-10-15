@@ -7,12 +7,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.lovecalculator.App
 import com.example.lovecalculator.HistoryPresenter
 import com.example.lovecalculator.R
 import com.example.lovecalculator.databinding.FragmentHistoryBinding
 import com.example.lovecalculator.model.LoveModel
-import com.example.lovecalculator.model.room.LoveDao
 import com.example.lovecalculator.ui.history.adapter.HistoryAdapter
 import com.example.lovecalculator.view.HistoryView
 import dagger.hilt.android.AndroidEntryPoint
